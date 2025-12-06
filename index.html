@@ -9,6 +9,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Password Gate -->
+    <div class="password-gate" id="password-gate">
+        <div class="password-gate-content">
+            <div class="password-gate-logo">
+                <img src="https://www.figma.com/api/mcp/asset/5698e4f1-7233-4f5f-9746-0d41663441a4" alt="Flipxer Icon" class="password-gate-icon">
+                <img src="https://www.figma.com/api/mcp/asset/718e15cc-a8af-4cee-aea1-f74e7fa342fe" alt="Flipxer" class="password-gate-text">
+            </div>
+            <h2>Team Access Required</h2>
+            <p>Enter the team password to view the roadmap</p>
+            <form id="password-form">
+                <input type="password" id="site-password" placeholder="Enter password" autocomplete="off" required>
+                <button type="submit" class="btn-primary">Access Roadmap</button>
+            </form>
+            <p class="password-error" id="password-error"></p>
+        </div>
+    </div>
+
     <!-- Header Navigation -->
     <header class="navbar">
         <div class="navbar-content">

@@ -3,6 +3,77 @@
 /* eslint-disable no-unused-vars */
 
 // ============================================
+// PASSWORD PROTECTION
+// ============================================
+const AUTH_KEY = 'flipxer-roadmap-auth';
+
+function checkAuth() {
+    const auth = sessionStorage.getItem(AUTH_KEY);
+    return auth === 'authenticated';
+}
+
+function setupPasswordGate() {
+    const gate = document.getElementById('password-gate');
+    const form = document.getElementById('password-form');
+    const errorEl = document.getElementById('password-error');
+    
+    if (!gate || !form) return;
+    
+    // If already authenticated, hide the gate
+    if (checkAuth()) {
+        gate.classList.add('hidden');
+        document.body.style.overflow = '';
+        return;
+    }
+    
+    // Block scrolling when gate is visible
+    document.body.style.overflow = 'hidden';
+    
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const password = document.getElementById('site-password').value;
+        errorEl.textContent = '';
+        
+        try {
+            // In production, verify against server
+            const isProduction = window.location.hostname !== 'localhost';
+            
+            if (isProduction) {
+                const response = await fetch('/api/auth', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password })
+                });
+                
+                if (response.ok) {
+                    sessionStorage.setItem(AUTH_KEY, 'authenticated');
+                    gate.classList.add('hidden');
+                    document.body.style.overflow = '';
+                } else {
+                    errorEl.textContent = 'Invalid password. Please try again.';
+                }
+            } else {
+                // Local development - use hardcoded password
+                if (password === 'FLIPXER2025') {
+                    sessionStorage.setItem(AUTH_KEY, 'authenticated');
+                    gate.classList.add('hidden');
+                    document.body.style.overflow = '';
+                } else {
+                    errorEl.textContent = 'Invalid password. Please try again.';
+                }
+            }
+        } catch (error) {
+            errorEl.textContent = 'Connection error. Please try again.';
+        }
+    });
+}
+
+// Run password check immediately
+document.addEventListener('DOMContentLoaded', function() {
+    setupPasswordGate();
+});
+
+// ============================================
 // CLOUD SYNC CONFIGURATION
 // ============================================
 // Uses secure server proxy in production, direct API in development

@@ -5,7 +5,7 @@ const BIN_ID = process.env.JSONBIN_BIN_ID;
 const API_KEY = process.env.JSONBIN_API_KEY;
 const BASE_URL = 'https://api.jsonbin.io/v3/b';
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, OPTIONS');
@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     }
 
     if (!BIN_ID || !API_KEY) {
-        return res.status(500).json({ error: 'Server not configured' });
+        return res.status(500).json({ error: 'Server not configured - missing environment variables' });
     }
 
     try {
@@ -61,4 +61,4 @@ export default async function handler(req, res) {
         console.error('API Error:', error);
         return res.status(500).json({ error: error.message });
     }
-}
+};
