@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipxer - Product Roadmap</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="logo">
+                <div class="logo-icon-wrapper">
+                    <img src="https://www.figma.com/api/mcp/asset/5698e4f1-7233-4f5f-9746-0d41663441a4" alt="Flipxer Icon" class="logo-icon">
+                </div>
+                <div class="logo-text-wrapper">
+                    <img src="https://www.figma.com/api/mcp/asset/718e15cc-a8af-4cee-aea1-f74e7fa342fe" alt="Flipxer" class="logo-text">
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#overview" class="nav-link active">Overview</a>
+                <a href="#timeline" class="nav-link">Timeline</a>
+                <a href="#milestones" class="nav-link">Milestones</a>
+                <a href="#considerations" class="nav-link">Considerations</a>
+            </nav>
+            <button class="btn-primary btn-export" id="export-pdf-btn">
+                <svg class="export-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 18V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 15L12 18L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Export PDF</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Progress Overview -->
+        <section class="progress-overview" id="overview">
+            <h2>Overall Progress</h2>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="overall-progress">
+                    <span class="progress-text">0%</span>
+                </div>
+            </div>
+            <div class="phase-indicators">
+                <div class="phase-dot active" data-phase="1">P1</div>
+                <div class="phase-line"></div>
+                <div class="phase-dot" data-phase="2">P2</div>
+                <div class="phase-line"></div>
+                <div class="phase-dot" data-phase="3">P3</div>
+                <div class="phase-line"></div>
+                <div class="phase-dot" data-phase="4">P4</div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="timeline" id="timeline">
+            <div class="section-header">
+                <span class="section-label">ROADMAP</span>
+                <h2>Development Timeline</h2>
+                <p>Track our progress from foundation to growth</p>
+            </div>
+
+            <!-- Phase 1 -->
+            <div class="phase-card phase-1" data-phase="1">
+                <div class="phase-header">
+                    <div class="phase-badge immediate">Phase 1</div>
+                    <div class="phase-timeline">
+                        <span class="timeline-icon">⏱️</span>
+                        <span>0–2 Weeks</span>
+                    </div>
+                </div>
+                <h3 class="phase-title">Immediate Priority</h3>
+                <p class="phase-description">Foundation work - Rebranding & Core Authentication</p>
+                
+                <div class="tasks-list">
+                    <div class="task-item" data-task="1-0">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Build short-term roadmap & requirements list</span>
+                            <span class="task-details">Define deliverables, priorities, and task breakdown for MVP</span>
+                        </div>
+                        <span class="task-priority high">High</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="1-1">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Finalize rebranding assets</span>
+                            <span class="task-details">Logo, color palette, UI updates, font style, brand name</span>
+                        </div>
+                        <span class="task-priority high">High</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="1-2">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Implement SMS + Email Authentication</span>
+                            <span class="task-details">Core authentication infrastructure</span>
+                        </div>
+                        <span class="task-priority high">High</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="1-3">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Implement Google Authentication</span>
+                            <span class="task-details">Email verification + SMS verification for users</span>
+                        </div>
+                        <span class="task-priority high">High</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="1-5">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">User trading password setup</span>
+                            <span class="task-details">Trading passcode required before Google Auth code</span>
+                        </div>
+                        <span class="task-priority high">High</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="1-7">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Session timeout implementation</span>
+                            <span class="task-details">10 minutes of inactivity = deny user access</span>
+                        </div>
+                        <span class="task-priority high">High</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="1-4">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Fresh login enforcement</span>
+                            <span class="task-details">All fresh logins require email or Google Authentication</span>
+                        </div>
+                        <span class="task-priority medium">Medium</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="1-6">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Internal QA and bug fixes</span>
+                            <span class="task-details">Comprehensive testing of all new features</span>
+                        </div>
+                        <span class="task-priority medium">Medium</span>
+                    </div>
+                </div>
+                
+                <div class="phase-footer">
+                    <div class="completion-status">
+                        <span class="completed-count">0</span>/<span class="total-count">8</span> tasks
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="phase-card phase-2" data-phase="2">
+                <div class="phase-header">
+                    <div class="phase-badge prelaunch">Phase 2</div>
+                    <div class="phase-timeline">
+                        <span class="timeline-icon">📅</span>
+                        <span>2–4 Weeks</span>
+                    </div>
+                </div>
+                <h3 class="phase-title">Pre-Launch</h3>
+                <p class="phase-description">Security, Polish & Final Preparations</p>
+                
+                <div class="tasks-list">
+                    <div class="task-item" data-task="2-1">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Security hardening</span>
+                            <span class="task-details">Password policies, optional 2FA enhancements</span>
+                        </div>
+                        <span class="task-priority high">High</span>
+                    </div>
+                    
+                    <div class="task-item task-protected" data-task="2-3">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">🔐 Stakeholder review & sign-off</span>
+                            <span class="task-details">Final approval before launch (Stakeholders only)</span>
+                        </div>
+                        <span class="task-priority high">High</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="2-4">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Complete all integrations</span>
+                            <span class="task-details">Finalize third-party service connections ASAP</span>
+                        </div>
+                        <span class="task-priority high">High</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="2-2">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Designer-led frontend polish</span>
+                            <span class="task-details">Refine all user-facing flows and interactions</span>
+                        </div>
+                        <span class="task-priority medium">Medium</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="2-5">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Separate KYC levels</span>
+                            <span class="task-details">Implement tiered KYC verification system</span>
+                        </div>
+                        <span class="task-priority medium">Medium</span>
+                    </div>
+                </div>
+                
+                <div class="phase-footer">
+                    <div class="completion-status">
+                        <span class="completed-count">0</span>/<span class="total-count">5</span> tasks
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase-card phase-3" data-phase="3">
+                <div class="phase-header">
+                    <div class="phase-badge launch">Phase 3</div>
+                    <div class="phase-timeline">
+                        <span class="timeline-icon">🚀</span>
+                        <span>Month 1</span>
+                    </div>
+                </div>
+                <h3 class="phase-title">Launch</h3>
+                <p class="phase-description">Go-Live & Initial Operations</p>
+                
+                <div class="tasks-list">
+                    <div class="task-item" data-task="3-1">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Go-live with MVP</span>
+                            <span class="task-details">Production deployment and public access</span>
+                        </div>
+                        <span class="task-priority high">High</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="3-4">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Rapid bug-fix cycle</span>
+                            <span class="task-details">Quick resolution of reported issues</span>
+                        </div>
+                        <span class="task-priority high">High</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="3-2">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Monitor performance</span>
+                            <span class="task-details">Track system health and user metrics</span>
+                        </div>
+                        <span class="task-priority medium">Medium</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="3-3">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Collect user feedback</span>
+                            <span class="task-details">Gather insights for improvements</span>
+                        </div>
+                        <span class="task-priority medium">Medium</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="3-5">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Enhanced email notifications</span>
+                            <span class="task-details">Include real-time location, date, and time</span>
+                        </div>
+                        <span class="task-priority medium">Medium</span>
+                    </div>
+                </div>
+                
+                <div class="phase-footer">
+                    <div class="completion-status">
+                        <span class="completed-count">0</span>/<span class="total-count">5</span> tasks
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="phase-card phase-4" data-phase="4">
+                <div class="phase-header">
+                    <div class="phase-badge postlaunch">Phase 4</div>
+                    <div class="phase-timeline">
+                        <span class="timeline-icon">📈</span>
+                        <span>Month 2+</span>
+                    </div>
+                </div>
+                <h3 class="phase-title">Post-Launch & Growth</h3>
+                <p class="phase-description">Advanced Features & Scaling</p>
+                
+                <div class="tasks-list">
+                    <div class="task-item" data-task="4-1">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Advanced KYC features</span>
+                            <span class="task-details">Enhanced verification workflows</span>
+                        </div>
+                        <span class="task-priority medium">Medium</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="4-2">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Analytics & dashboards</span>
+                            <span class="task-details">Comprehensive reporting and insights</span>
+                        </div>
+                        <span class="task-priority medium">Medium</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="4-3">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Scale authentication</span>
+                            <span class="task-details">OAuth expansion, hardware keys if needed</span>
+                        </div>
+                        <span class="task-priority low">Low</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="4-4">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Mobile app roadmap</span>
+                            <span class="task-details">Planning for native mobile experience</span>
+                        </div>
+                        <span class="task-priority low">Low</span>
+                    </div>
+                    
+                    <div class="task-item" data-task="4-5">
+                        <label class="task-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <div class="task-content">
+                            <span class="task-title">Additional integrations</span>
+                            <span class="task-details">Expand ecosystem partnerships</span>
+                        </div>
+                        <span class="task-priority low">Low</span>
+                    </div>
+                </div>
+                
+                <div class="phase-footer">
+                    <div class="completion-status">
+                        <span class="completed-count">0</span>/<span class="total-count">5</span> tasks
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Milestones -->
+        <section class="milestones-section" id="milestones">
+            <div class="section-header">
+                <span class="section-label">TARGETS</span>
+                <h2>Key Milestones</h2>
+                <p>Track our progress through major deliverables</p>
+            </div>
+            <div class="milestones-grid">
+                <div class="milestone-card">
+                    <div class="milestone-week">Week 2</div>
+                    <div class="milestone-content">
+                        <h4>Foundation Complete</h4>
+                        <ul>
+                            <li>Rebranding finalized</li>
+                            <li>Authentication setup done</li>
+                            <li>Initial QA passed</li>
+                        </ul>
+                    </div>
+                    <div class="milestone-status" data-milestone="1">
+                        <span class="status-icon">⏳</span>
+                        <span>Pending</span>
+                    </div>
+                </div>
+                
+                <div class="milestone-card">
+                    <div class="milestone-week">Week 4</div>
+                    <div class="milestone-content">
+                        <h4>Launch Ready</h4>
+                        <ul>
+                            <li>Security hardening complete</li>
+                            <li>Designer polish done</li>
+                            <li>Stakeholder sign-off</li>
+                            <li>All integrations ready</li>
+                        </ul>
+                    </div>
+                    <div class="milestone-status" data-milestone="2">
+                        <span class="status-icon">⏳</span>
+                        <span>Pending</span>
+                    </div>
+                </div>
+                
+                <div class="milestone-card">
+                    <div class="milestone-week">Month 1</div>
+                    <div class="milestone-content">
+                        <h4>MVP Live</h4>
+                        <ul>
+                            <li>Production deployment</li>
+                            <li>Performance monitoring active</li>
+                            <li>Bug-fix cycle established</li>
+                        </ul>
+                    </div>
+                    <div class="milestone-status" data-milestone="3">
+                        <span class="status-icon">⏳</span>
+                        <span>Pending</span>
+                    </div>
+                </div>
+                
+                <div class="milestone-card">
+                    <div class="milestone-week">Month 2+</div>
+                    <div class="milestone-content">
+                        <h4>Growth Phase</h4>
+                        <ul>
+                            <li>Advanced features rollout</li>
+                            <li>Growth roadmap initiated</li>
+                            <li>Scaling preparations</li>
+                        </ul>
+                    </div>
+                    <div class="milestone-status" data-milestone="4">
+                        <span class="status-icon">⏳</span>
+                        <span>Pending</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" id="contact">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon-wrapper">
+                        <img src="https://www.figma.com/api/mcp/asset/5698e4f1-7233-4f5f-9746-0d41663441a4" alt="Flipxer Icon" class="logo-icon">
+                    </div>
+                    <div class="logo-text-wrapper">
+                        <img src="https://www.figma.com/api/mcp/asset/718e15cc-a8af-4cee-aea1-f74e7fa342fe" alt="Flipxer" class="logo-text">
+                    </div>
+                </div>
+                <p>Flipxer Product Roadmap • Last Updated: <span id="last-updated"></span></p>
+                <p class="footer-note">Progress is saved locally in your browser</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Floating Save Button -->
+    <div class="floating-save-container">
+        <button class="floating-save-btn" id="save-progress-btn" title="Save Progress (Ctrl+S)">
+            <svg class="save-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16L21 8V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17 21V13H7V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 3V8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="save-text">Save</span>
+        </button>
+        <div class="save-indicator" id="save-indicator">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="indicator-text">Saved</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
