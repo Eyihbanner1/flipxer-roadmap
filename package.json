@@ -5,5 +5,8 @@
   "scripts": {
     "dev": "npx serve -l 3000",
     "build": "echo 'Static site - no build required'"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3"
   }
 }

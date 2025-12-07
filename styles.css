@@ -71,17 +71,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
     margin-bottom: 2rem;
-}
-
-.password-gate-icon {
-    width: 40px;
-    height: 40px;
-}
-
-.password-gate-text {
-    height: 32px;
 }
 
 .password-gate-content h2 {

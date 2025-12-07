@@ -1,6 +1,9 @@
-// Simple password protection middleware
-// Hardcoded password - env var has issues with trailing characters
-const SITE_PASSWORD = 'FlIpXeR2025?1#';
+// Secure password protection middleware using bcrypt
+const bcrypt = require('bcryptjs');
+
+// Password hash - the actual password is never stored in code
+// To change password: generate new hash with bcrypt.hashSync('newpassword', 10)
+const PASSWORD_HASH = '$2b$10$U/rE/pIzd6rqr6gNvwO6q.FIyzghPaYWsZUZakhpBmTX9yST1wude';
 
 module.exports = async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -27,7 +30,10 @@ module.exports = async function handler(req, res) {
 
     const password = body?.password;
 
-    if (password === SITE_PASSWORD) {
+    // Compare password against hash (timing-safe comparison)
+    const isValid = password && bcrypt.compareSync(password, PASSWORD_HASH);
+
+    if (isValid) {
         return res.status(200).json({ success: true });
     } else {
         return res.status(401).json({ error: 'Invalid password' });
